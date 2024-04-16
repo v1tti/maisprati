@@ -1,6 +1,8 @@
+
 # Pojeto Dev Full Stack +PraTI
 
 Proposta:
+
 ![Logo](https://i.imgur.com/y0M3hpO.png)
 
 
