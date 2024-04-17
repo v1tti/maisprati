@@ -1,20 +1,16 @@
+const PRIMOS_MOSTRADOS = 50
 let contador = 0;
 let valor = 100;
 
-while (contador < 50) {
-  while (
-    valor % 2 !== 0 &&
-    valor % 3 !== 0 &&
-    valor % 5 !== 0 &&
-    valor % 7 !== 0 &&
-    valor % 11 !== 0 &&
-    valor % 13 !== 0 &&
-    valor % 17 !== 0 &&
-    valor % 19 !== 0
-  ) {
-    console.log(valor);
-    contador++;
-    break;
+while (contador < PRIMOS_MOSTRADOS) {
+  valor++;
+  let divisor = 2;
+  let isPrimo = true;
+
+  while (isPrimo && divisor < valor) {
+    isPrimo = valor % divisor !== 0;
+    divisor++;
   }
-  valor += 1;
+
+  (isPrimo && console.log(valor), contador += isPrimo);
 }
