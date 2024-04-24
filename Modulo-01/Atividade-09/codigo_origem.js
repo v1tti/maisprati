@@ -19,10 +19,22 @@ switch (codigoOrigem) {
   case 4:
     regiaoOrigem = "Oeste";
     break;
-  case 5 || 6:
+  case 5:
     regiaoOrigem = "Nordeste";
-  case 7 || 8 || 9:
+    break;
+  case 6:
+    regiaoOrigem = "Nordeste";
+    break;
+  case 7:
     regiaoOrigem = "Sudeste";
+    break;
+  case 8:
+    regiaoOrigem = "Sudeste";
+    break;
+  case 9:
+    regiaoOrigem = "Sudeste";
+    break;
+
   default:
     if (codigoOrigem >= 10 && codigoOrigem <= 20) {
       regiaoOrigem = "Centro-Oeste";
