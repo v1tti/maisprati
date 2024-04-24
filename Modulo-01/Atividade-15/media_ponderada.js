@@ -9,9 +9,9 @@ let somaPesos = 0;
 let valor = 1;
 let peso = 1;
 
-while (valor !== 0 && !isNaN(valor) && !isNaN(peso)) {
+while (!!valor && !!peso && !isNaN(valor) && !isNaN(peso)) {
   valor = parseFloat(prompt(SOLICITAR_VALOR));
-  while (valor !== 0) {
+  while (!!valor) {
     peso = parseFloat(prompt(SOLICITAR_PESO));
     somaPesos += peso;
     mediaFinal += valor * peso;
