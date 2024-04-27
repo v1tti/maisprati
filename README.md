@@ -1,5 +1,5 @@
 
-# Pojeto Dev Full Stack +PraTI
+# Projeto Dev Full Stack +PraTI
 
 Aqui encontram-se as pastas com atividades propostas, separadas em módulos.
 
