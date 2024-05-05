@@ -55,7 +55,7 @@ const SOLICITAR_EXERCICIO = "Informe o exercicio desejado: (0 para sair): ";
 function selecionarExercicio() {
   let exercicioEscolhido = parseInt(prompt(SOLICITAR_EXERCICIO));
   while (exercicioEscolhido !== 0) {
-    while (isNaN(exercicioEscolhido) || exercicioEscolhido === "") {
+    while (isNaN(exercicioEscolhido) || exercicioEscolhido == "") {
       erroValorInformadoNaoEhNumero();
       exercicioEscolhido = pedirValorInteiroParaUsuario();
     }
@@ -71,8 +71,6 @@ function selecionarExercicio() {
         break;
       case 4:
         calcularTriangulo();
-        break;
-      default:
         break;
       case 5:
         joKenPo();
@@ -208,6 +206,8 @@ function selecionarExercicio() {
         break;
       case 49:
         transacoesFinanceiras();
+        break;
+      default:
         break;
     }
 

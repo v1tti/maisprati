@@ -58,20 +58,20 @@ function matrizSomaColunas() {
       296, 297, 298, 299, 300,
     ],
   ];
-  let somaLinhas = [];
+  let somaColunas = [];
 
-  for (let linha = 0; linha < 15; linha++) {
+  for (let coluna = 0; coluna < 20; coluna++) {
     let somatorio = 0;
-    for (let coluna = 0; coluna < 20; coluna++) {
+    for (let linha = 0; linha < 15; linha++) {
       somatorio += matriz[linha][coluna];
     }
-    somaLinhas.push(somatorio);
+    somaColunas.push(somatorio);
   }
 
   let contador = 0;
-  somaLinhas.forEach((linha) => {
+  somaColunas.forEach((coluna) => {
     contador++;
-    console.log(`Somatorio da linha ${contador}: ${linha}`);
+    console.log(`Somatorio da coluna ${contador}: ${coluna}`);
   });
 }
 module.exports = matrizSomaColunas;

@@ -25,7 +25,7 @@ function listarReservas() {
     const hoteis = JSON.parse(jsonData);
 
     reservas.forEach((reserva) => {
-      hotelDaReserva = hoteis.find((hotel) => hotel.id == reserva.idHotel);
+      let hotelDaReserva = hoteis.find((hotel) => hotel.id == reserva.idHotel);
       reserva.hotelDetalhes = hotelDaReserva;
     });
   } catch (error) {

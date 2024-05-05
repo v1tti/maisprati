@@ -1,5 +1,5 @@
 function dadosVariasPropriedades() {
-  dados = {
+  let dados = {
     nome: "Pepe",
     fotos: ["urlfoto1", "urlfoto2", "urlfoto3"],
     telefones: ["53984366968", "5332352839"],

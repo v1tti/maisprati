@@ -21,7 +21,6 @@ function matrizCincoPorCinco() {
   }
   console.log(`Vetor SL: ${SL}`);
   console.log(`Vetor SC: ${SC}`);
-  return;
 }
 function somarLinhaMatriz(matriz, linha) {
   let soma = 0;
