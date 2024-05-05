@@ -24,6 +24,6 @@ function adicionarHotel(nome, cidade, quartos) {
     throw error;
   }
 
-  return `Hotel adicionado com sucesso: \n${hotel}\n`;
+  return `Hotel adicionado com sucesso!`;
 }
 module.exports = adicionarHotel;

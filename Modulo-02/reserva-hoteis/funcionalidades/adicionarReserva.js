@@ -49,6 +49,6 @@ function adicionarReserva(idHotel, nomeCliente) {
     throw error;
   }
 
-  return "Reserva realizada com sucesso: ";
+  return "Reserva realizada com sucesso!";
 }
 module.exports = adicionarReserva;
