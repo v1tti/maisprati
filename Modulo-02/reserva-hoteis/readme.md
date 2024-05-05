@@ -1,6 +1,6 @@
 # Sistema de gerenciamento de hoteis e reservas
 
-<div align="center">
+<div align="left">
   <img src="https://i.imgur.com/2eJWVFu_d.webp?maxwidth=760&fidelity=grand" width="400" height="400">
 </div>
 
