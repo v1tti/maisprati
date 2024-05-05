@@ -7,6 +7,7 @@ A pasta serve para alguns métodos que imaginei que pudesse utilizar em mais de 
 
 O script.js é onde as funções dos exercícios são importadas como módulos, permitindo que o usuário digite o número do exercício que quer testar e siga os passos de acordo com o exercício escolhido.
 
+Os enunciados dos exercícios encontram-se no pdf "Lista de Tarefas 2"
 
 ## Exemplo
 
