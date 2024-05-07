@@ -17,7 +17,7 @@ function calcularPrecoPassagem() {
     precoViagem = distancia * precoParaViagensAte200KmEmReais;
   else precoViagem = distancia * precoParaViagensMaisLongasEmReais;
 
-  return console.log(`Sua passagem custara R$:${precoViagem}`)
+  return console.log(`Sua passagem custara R$:${precoViagem}`);
 }
 
 module.exports = calcularPrecoPassagem;

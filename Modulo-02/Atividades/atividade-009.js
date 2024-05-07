@@ -6,6 +6,8 @@ const valorVazioOuIsNan = require("../utils/valorVazioOuIsNan");
 function mostrarSalarioESexo() {
   let condicaoDeParada = 1;
   let funcionarios = [];
+  let salarioHomens = 0;
+  let salarioMulheres = 0;
   while (condicaoDeParada === 1) {
     let nome = prompt("Informe o nome do funcionario: ");
     while (!nome) {
@@ -19,8 +21,14 @@ function mostrarSalarioESexo() {
       prompt("Informe o sexo do funcionario (1-Homem|2-Mulher): ")
     );
     if (valorVazioOuIsNan(sexo)) sexo = pedirValorAteVirFloat(sexo);
-    if (sexo === 1) sexo = "Homem";
-    if (sexo === 2) sexo = "Mulher";
+    if (sexo === 1) {
+      sexo = "Homem";
+      salarioHomens += salario;
+    }
+    if (sexo === 2) {
+      sexo = "Mulher";
+      salarioMulheres += salario;
+    }
 
     funcionarios.push({ nome: nome, salario: salario, sexo: sexo });
 
@@ -33,6 +41,9 @@ function mostrarSalarioESexo() {
       `Nome: ${funcionario.nome}, Salario: R$ ${funcionario.salario}, Sexo: ${funcionario.sexo}`
     );
   });
+  console.log(
+    `Salario para homens: ${salarioHomens}, salario para mulheres: ${salarioMulheres}`
+  );
 }
 
 module.exports = mostrarSalarioESexo;

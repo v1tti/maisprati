@@ -1,15 +1,18 @@
 function fibonacciQuinzePrimeiros() {
-    let vetorFibonacci = [];
-    vetorFibonacci[0] = 1;
-    vetorFibonacci[1] = 1;
-    let contador = 1;
-    while (vetorFibonacci.length < 15) {
-      vetorFibonacci.push(
-        vetorFibonacci[contador] + vetorFibonacci[contador - 1]
-      );
-      contador++;
-    }
-    return console.log(`Sequencia de Fibonacci: ${vetorFibonacci}`);
+  let vetorFibonacci = [];
+  preencherDoisPrimeirosValores(vetorFibonacci);
+  preencherVetorAtePosicaoInformada(vetorFibonacci, 15);
+
+  return console.log(`Sequencia de Fibonacci: ${vetorFibonacci}`);
+}
+function preencherDoisPrimeirosValores(vetor) {
+  while (vetor.length < 2) vetor.push(1);
+}
+function preencherVetorAtePosicaoInformada(vetor, posicao) {
+  let contador = 1;
+  while (vetor.length < posicao) {
+    vetor.push(vetor[contador] + vetor[contador - 1]);
+    contador++;
   }
-  module.exports = fibonacciQuinzePrimeiros;
-  
+}
+module.exports = fibonacciQuinzePrimeiros;
