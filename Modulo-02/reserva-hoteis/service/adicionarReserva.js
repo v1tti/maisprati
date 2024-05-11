@@ -4,7 +4,7 @@ const path = require("path");
 
 function adicionarReserva(idHotel, nomeCliente) {
   if (idHotel == 0) {
-    return;
+    return "\nOperação cancelada!\n";
   }
   let reserva = {};
   reserva.idHotel = idHotel;

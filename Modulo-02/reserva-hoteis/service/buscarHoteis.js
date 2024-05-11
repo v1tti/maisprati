@@ -4,7 +4,7 @@ const path = require("path");
 
 function buscarHotelPorCidade(cidade) {
   if (cidade == 0) {
-    return;
+    return "\nOperação cancelada!\n";
   }
   let hoteisBuscados = [];
   const filePath = path.join(__dirname, "../hoteis/", `hoteis.json`);

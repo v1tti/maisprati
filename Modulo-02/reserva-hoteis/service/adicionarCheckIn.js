@@ -5,7 +5,7 @@ const erroHotelNaoEncontrado = require("./utils/hotel/errors");
 
 function adicionarCheckIn(idHotel, nomeCliente) {
   if (idHotel == 0) {
-    return;
+    return "\nOperação cancelada!\n";
   }
   let hotelParaCheckIn = {};
   let checkIn = {};

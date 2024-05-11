@@ -4,7 +4,7 @@ const path = require("path");
 
 function adicionarHotel(nome, cidade, quartos) {
   if (nome == 0) {
-    return;
+    return "\nOperação cancelada!\n";
   }
   let hotel = {};
   hotel.nome = nome.toLocaleLowerCase();
