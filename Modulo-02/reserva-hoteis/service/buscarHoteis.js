@@ -22,4 +22,20 @@ function buscarHotelPorCidade(cidade) {
 
   return hoteisBuscados;
 }
-module.exports = buscarHotelPorCidade;
+
+function buscarHotelPorId(id) {
+  let hotelEncontrado = [];
+  const filePath = path.join(__dirname, "../hoteis", `hoteis.json`);
+  try {
+    const jsonData = fs.readFileSync(filePath);
+    const hoteis = JSON.parse(jsonData);
+    hotelEncontrado = hoteis.find((hotel) => hotel.id == id);
+    if (!hotelEncontrado) return "Nenhum hotel encontrado com o id informado";
+  } catch (error) {
+    console.log(error);
+  }
+
+  return hotelEncontrado;
+}
+module.exports.buscarHotelPorCidade = buscarHotelPorCidade;
+module.exports.buscarHotelPorId = buscarHotelPorId;

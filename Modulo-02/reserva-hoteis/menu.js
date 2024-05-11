@@ -1,9 +1,11 @@
 const prompt = require("prompt-sync")();
-const adicionarHotel = require("./funcionalidades/adicionarHotel");
-const adicionarReserva = require("./funcionalidades/adicionarReserva");
-const buscarHotelPorCidade = require("./funcionalidades/buscarHoteis");
-const cancelarReserva = require("./funcionalidades/cancelarReserva");
-const listarReservas = require("./funcionalidades/listarReservas");
+const adicionarCheckIn = require("./service/adicionarCheckIn");
+const adicionarCheckOut = require("./service/adicionarCheckOut");
+const adicionarHotel = require("./service/adicionarHotel");
+const adicionarReserva = require("./service/adicionarReserva");
+const { buscarHotelPorCidade } = require("./service/buscarHoteis");
+const cancelarReserva = require("./service/cancelarReserva");
+const listarReservas = require("./service/listarReservas");
 
 function menuHotel() {
   let programaDeveRodar = true;
@@ -11,7 +13,7 @@ function menuHotel() {
   while (programaDeveRodar) {
     console.log("Bem-vindo, informe a opção desejada: ");
     console.log(
-      "1-Adicionar Hotel\n2-Adicionar Reserva\n3-Buscar Hoteis\n4-Cancelar Reserva\n5-Listar Reservas\n0-Sair\n"
+      "1-Adicionar Hotel\n2-Adicionar Reserva\n3-Buscar Hoteis\n4-Cancelar Reserva\n5-Listar Reservas\n6-Fazer Check-in\n7-Fazer Check-out\n0-Sair\n"
     );
     let digitoInformado = parseInt(prompt());
     switch (digitoInformado) {
@@ -50,12 +52,27 @@ function menuHotel() {
         );
         let nomeReserva = prompt("Informe o nome do cliente desta reserva: ");
 
-        cancelarReserva(idHotelReserva, nomeReserva);
+        console.log(cancelarReserva(idHotelReserva, nomeReserva));
 
         break;
       case 5:
         console.log(listarReservas());
 
+        break;
+      case 6:
+        let idHotelCheckin = prompt("Informe o id do hotel para o check-in: ");
+        let nomeCheckIn = prompt("Informe o nome do cliente para o check-in: ");
+
+        console.log(adicionarCheckIn(idHotelCheckin, nomeCheckIn));
+        break;
+      case 7:
+        let idHotelCheckout = parseInt(
+          prompt("Informe o id do hotel para o check-out: ")
+        );
+        let nomeCheckOut = prompt(
+          "Informe o nome do cliente para o check-out: "
+        );
+        console.log(adicionarCheckOut(idHotelCheckout, nomeCheckOut));
         break;
       default:
         if (digitoInformado == 0) programaDeveRodar = false;

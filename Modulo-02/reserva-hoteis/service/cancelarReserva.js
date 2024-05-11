@@ -18,7 +18,7 @@ function cancelarReserva(idHotel, nomeCliente) {
         reserva.nomeCliente == nomeCliente.toLocaleLowerCase()
     );
     if (!reservaParaAlterar) {
-      return "Desculpe, nao foi encontrada uma reserva neste hotel com este nome :(";
+      return "Desculpe, nao foi encontrada uma reserva neste hotel com este nome ou id :(";
     }
     for (let index = reservas.length - 1; index >= 0; index--) {
       if (
