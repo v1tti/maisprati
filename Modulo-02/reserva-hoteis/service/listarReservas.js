@@ -12,7 +12,7 @@ function listarReservas() {
     const reservasJson = JSON.parse(jsonData);
     reservas = reservasJson;
     if (reservas.length < 1) {
-      return "Desculpe, nao foi encontrada nenhuma reserva no momento :(";
+      return "\nDesculpe, nao foi encontrada nenhuma reserva no momento :(\n";
     }
   } catch (error) {
     console.log(error);

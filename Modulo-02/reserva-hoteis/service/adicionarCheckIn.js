@@ -4,6 +4,9 @@ const { buscarHotelPorId } = require("./buscarHoteis");
 const erroHotelNaoEncontrado = require("./utils/hotel/errors");
 
 function adicionarCheckIn(idHotel, nomeCliente) {
+  if (idHotel == 0) {
+    return;
+  }
   let hotelParaCheckIn = {};
   let checkIn = {};
   const filePath = path.join(__dirname, "../hoteis/", `checkins.json`);
@@ -36,7 +39,7 @@ function adicionarCheckIn(idHotel, nomeCliente) {
   } catch (error) {
     console.log(error);
   }
-  return "Checkin realizado com sucesso!";
+  return "\nCheckin realizado com sucesso!\n";
 }
 
 module.exports = adicionarCheckIn;

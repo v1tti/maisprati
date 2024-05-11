@@ -3,6 +3,9 @@ const fs = require("fs");
 const path = require("path");
 
 function cancelarReserva(idHotel, nomeCliente) {
+  if (idHotel == 0) {
+    return "\nOperação cancelada!\n";
+  }
   let reserva = {};
   reserva.idHotel = idHotel;
   reserva.nomeCliente = nomeCliente.toLocaleLowerCase();
@@ -18,7 +21,7 @@ function cancelarReserva(idHotel, nomeCliente) {
         reserva.nomeCliente == nomeCliente.toLocaleLowerCase()
     );
     if (!reservaParaAlterar) {
-      return "Desculpe, nao foi encontrada uma reserva neste hotel com este nome ou id :(";
+      return "\nDesculpe, nao foi encontrada uma reserva neste hotel com este nome ou id :(\n";
     }
     for (let index = reservas.length - 1; index >= 0; index--) {
       if (
@@ -52,6 +55,6 @@ function cancelarReserva(idHotel, nomeCliente) {
     throw error;
   }
 
-  return "A reserva foi cancelada com sucesso!";
+  return "\nA reserva foi cancelada com sucesso!\n";
 }
 module.exports = cancelarReserva;

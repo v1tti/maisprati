@@ -3,11 +3,15 @@ const fs = require("fs");
 const path = require("path");
 
 function adicionarHotel(nome, cidade, quartos) {
+  if (nome == 0) {
+    return;
+  }
   let hotel = {};
   hotel.nome = nome.toLocaleLowerCase();
   hotel.cidade = cidade.toLocaleLowerCase();
   hotel.quartosTotais = quartos;
   hotel.quartosDisponiveis = quartos;
+  hotel.avaliacoes = [];
 
   const filePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
   try {
@@ -24,6 +28,6 @@ function adicionarHotel(nome, cidade, quartos) {
     throw error;
   }
 
-  return `Hotel adicionado com sucesso!`;
+  return `\nHotel adicionado com sucesso!\n`;
 }
 module.exports = adicionarHotel;

@@ -4,6 +4,9 @@ const { buscarHotelPorId } = require("./buscarHoteis");
 const erroHotelNaoEncontrado = require("./utils/hotel/errors");
 
 function adicionarCheckOut(idHotel, nomeCliente) {
+  if (idHotel == 0) {
+    return;
+  }
   let hotelParaCheckIn = {};
   let checkIn = {};
   const filePath = path.join(__dirname, "../hoteis/", `checkins.json`);
@@ -48,7 +51,7 @@ function adicionarCheckOut(idHotel, nomeCliente) {
         reserva.nomeCliente == nomeCliente.toLocaleLowerCase()
     );
     if (!reservaParaAlterar) {
-      return "Desculpe, nao foi encontrada uma reserva neste hotel com este nome ou id :(";
+      return "\nDesculpe, nao foi encontrada uma reserva neste hotel com este nome ou id :(\n";
     }
     for (let index = reservas.length - 1; index >= 0; index--) {
       if (
@@ -66,7 +69,7 @@ function adicionarCheckOut(idHotel, nomeCliente) {
 
     throw error;
   }
-  return "Checkout realizado com sucesso!";
+  return "\nCheckout realizado com sucesso!\n";
 }
 
 module.exports = adicionarCheckOut;

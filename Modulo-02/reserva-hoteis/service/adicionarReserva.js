@@ -16,7 +16,7 @@ function adicionarReserva(idHotel, nomeCliente) {
     const hoteis = JSON.parse(jsonData);
     let hotelParaAlterar = hoteis.find((hotel) => hotel.id === idHotel);
     if (hotelParaAlterar.quartosDisponiveis == 0) {
-      return "Desculpe, o hotel nao possui quartos disponiveis :(";
+      return "\nDesculpe, o hotel nao possui quartos disponiveis :(\n";
     }
 
     hotelParaAlterar.quartosDisponiveis--;
@@ -49,6 +49,6 @@ function adicionarReserva(idHotel, nomeCliente) {
     throw error;
   }
 
-  return "Reserva realizada com sucesso!";
+  return "\nReserva realizada com sucesso!\n";
 }
 module.exports = adicionarReserva;

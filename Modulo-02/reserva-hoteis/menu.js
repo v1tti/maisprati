@@ -1,4 +1,5 @@
 const prompt = require("prompt-sync")();
+const avaliacaoRequest = require("./request/hotel/avaliacaoRequest");
 const adicionarCheckIn = require("./service/adicionarCheckIn");
 const adicionarCheckOut = require("./service/adicionarCheckOut");
 const adicionarHotel = require("./service/adicionarHotel");
@@ -6,15 +7,13 @@ const adicionarReserva = require("./service/adicionarReserva");
 const { buscarHotelPorCidade } = require("./service/buscarHoteis");
 const cancelarReserva = require("./service/cancelarReserva");
 const listarReservas = require("./service/listarReservas");
+const adicionarNota = require(`./service/adicionarNotaHotel`);
 
 function menuHotel() {
   let programaDeveRodar = true;
-
+  console.log("\nBem-vindo, informe a opção desejada: \n");
   while (programaDeveRodar) {
-    console.log("Bem-vindo, informe a opção desejada: ");
-    console.log(
-      "1-Adicionar Hotel\n2-Adicionar Reserva\n3-Buscar Hoteis\n4-Cancelar Reserva\n5-Listar Reservas\n6-Fazer Check-in\n7-Fazer Check-out\n0-Sair\n"
-    );
+    mostrarOpcoes();
     let digitoInformado = parseInt(prompt());
     switch (digitoInformado) {
       case 1:
@@ -74,10 +73,26 @@ function menuHotel() {
         );
         console.log(adicionarCheckOut(idHotelCheckout, nomeCheckOut));
         break;
+      case 9:
+        console.log(adicionarNota(avaliacaoRequest()));
+        break;
       default:
         if (digitoInformado == 0) programaDeveRodar = false;
         break;
     }
   }
+}
+function mostrarOpcoes() {
+  console.log("🏩  1-Adicionar hotel no sistema");
+  console.log("✍   2-Adicionar reserva no sistema");
+  console.log("🔎  3-Buscar hoteis");
+  console.log("❌  4-Cancelar reserva");
+  console.log("👀  5-Listar reservas");
+  console.log("✔   6-Fazer Check-in");
+  console.log("✔   7-Fazer Check-out");
+  console.log("🕑  8-Historico de ocupações do hotel");
+  console.log("⭐  9-Avaliar hotel");
+  console.log("📴  0-Sair");
+  console.log("\n");
 }
 menuHotel();

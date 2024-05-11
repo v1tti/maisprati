@@ -3,6 +3,9 @@ const fs = require("fs");
 const path = require("path");
 
 function buscarHotelPorCidade(cidade) {
+  if (cidade == 0) {
+    return;
+  }
   let hoteisBuscados = [];
   const filePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
   try {
@@ -12,7 +15,7 @@ function buscarHotelPorCidade(cidade) {
       (hotel) => hotel.cidade.toLocaleLowerCase() == cidade.toLocaleLowerCase()
     );
     if (hoteisBuscados.lenght < 1) {
-      return "Nenhum hotel encontrado com este nome :(";
+      return "\nNenhum hotel encontrado com este nome :(\n";
     }
   } catch (error) {
     console.log(error);
