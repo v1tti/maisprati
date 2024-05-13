@@ -3,8 +3,8 @@ const fs = require("fs");
 const path = require("path");
 
 function listarReservas() {
-  const reservaFilePath = path.join(__dirname, "../reservas/", `reservas.json`);
-  const hotelFilePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const reservaFilePath = path.join(__dirname, "../../reservas/", `reservas.json`);
+  const hotelFilePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
   let reservas = [];
 
   try {

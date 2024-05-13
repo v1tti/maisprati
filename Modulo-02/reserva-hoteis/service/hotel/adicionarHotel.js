@@ -13,7 +13,7 @@ function adicionarHotel(nome, cidade, quartos) {
   hotel.quartosDisponiveis = quartos;
   hotel.avaliacoes = [];
 
-  const filePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const filePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
   try {
     const jsonData = fs.readFileSync(filePath);
     const hoteis = JSON.parse(jsonData);

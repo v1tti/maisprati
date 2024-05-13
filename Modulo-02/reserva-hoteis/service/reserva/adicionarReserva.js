@@ -10,7 +10,7 @@ function adicionarReserva(idHotel, nomeCliente) {
   reserva.idHotel = idHotel;
   reserva.nomeCliente = nomeCliente.toLocaleLowerCase();
 
-  const hotelFilePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const hotelFilePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
   try {
     const jsonData = fs.readFileSync(hotelFilePath);
     const hoteis = JSON.parse(jsonData);
@@ -29,7 +29,7 @@ function adicionarReserva(idHotel, nomeCliente) {
     throw error;
   }
 
-  const filePath = path.join(__dirname, "../reservas/", `reservas.json`);
+  const filePath = path.join(__dirname, "../../reservas/", `reservas.json`);
   try {
     const jsonData = fs.readFileSync(filePath);
     const reservas = JSON.parse(jsonData);

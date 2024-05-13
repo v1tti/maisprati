@@ -1,13 +1,15 @@
 const prompt = require("prompt-sync")();
 const avaliacaoRequest = require("./request/hotel/avaliacaoRequest");
-const adicionarCheckIn = require("./service/adicionarCheckIn");
-const adicionarCheckOut = require("./service/adicionarCheckOut");
-const adicionarHotel = require("./service/adicionarHotel");
-const adicionarReserva = require("./service/adicionarReserva");
-const { buscarHotelPorCidade } = require("./service/buscarHoteis");
-const cancelarReserva = require("./service/cancelarReserva");
-const listarReservas = require("./service/listarReservas");
-const adicionarNota = require(`./service/adicionarNotaHotel`);
+const adicionarCheckIn = require("./service/checkin/adicionarCheckIn");
+const adicionarCheckOut = require("./service/checkin/adicionarCheckOut");
+const adicionarHotel = require("./service/hotel/adicionarHotel");
+const adicionarReserva = require("./service/reserva/adicionarReserva");
+const { buscarHotelPorCidade } = require("./service/hotel/buscarHoteis");
+const cancelarReserva = require("./service/reserva/cancelarReserva");
+const listarReservas = require("./service/reserva/listarReservas");
+const adicionarNota = require(`./service/hotel/adicionarNotaHotel`);
+const ocupacaoRequest = require("./request/hotel/ocupacaoRequest");
+const mostrarOcupacoesHotel = require("./service/hotel/mostrarOcupacoesHotel");
 
 function menuHotel() {
   let programaDeveRodar = true;
@@ -72,6 +74,9 @@ function menuHotel() {
           "Informe o nome do cliente para o check-out: "
         );
         console.log(adicionarCheckOut(idHotelCheckout, nomeCheckOut));
+        break;
+      case 8:
+        mostrarOcupacoesHotel(ocupacaoRequest());
         break;
       case 9:
         console.log(adicionarNota(avaliacaoRequest()));

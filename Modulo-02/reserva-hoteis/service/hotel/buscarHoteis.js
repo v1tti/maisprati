@@ -7,7 +7,7 @@ function buscarHotelPorCidade(cidade) {
     return "\nOperação cancelada!\n";
   }
   let hoteisBuscados = [];
-  const filePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const filePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
   try {
     const jsonData = fs.readFileSync(filePath);
     const hoteis = JSON.parse(jsonData);
@@ -28,7 +28,7 @@ function buscarHotelPorCidade(cidade) {
 
 function buscarHotelPorId(id) {
   let hotelEncontrado = [];
-  const filePath = path.join(__dirname, "../hoteis", `hoteis.json`);
+  const filePath = path.join(__dirname, "../../hoteis", `hoteis.json`);
   try {
     const jsonData = fs.readFileSync(filePath);
     const hoteis = JSON.parse(jsonData);

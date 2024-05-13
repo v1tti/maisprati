@@ -5,7 +5,7 @@ function adicionarNota({ idHotel, nota, nome, comentario }) {
   if (idHotel == 0) {
     return "\nOperação cancelada!\n";
   }
-  const hotelFilePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const hotelFilePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
   const avaliacao = { nome: nome, nota: nota, comentario: comentario };
 
   try {

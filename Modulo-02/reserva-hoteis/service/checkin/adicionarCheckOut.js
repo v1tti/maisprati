@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const { buscarHotelPorId } = require("./buscarHoteis");
-const erroHotelNaoEncontrado = require("./utils/hotel/errors");
+const { buscarHotelPorId } = require("../hotel/buscarHoteis");
+const erroHotelNaoEncontrado = require("../utils/hotel/errors");
 
 function adicionarCheckOut(idHotel, nomeCliente) {
   if (idHotel == 0) {
@@ -9,9 +9,9 @@ function adicionarCheckOut(idHotel, nomeCliente) {
   }
   let hotelParaCheckIn = {};
   let checkIn = {};
-  const filePath = path.join(__dirname, "../hoteis/", `checkins.json`);
-  const reservaFilePath = path.join(__dirname, "../reservas/", `reservas.json`);
-  const hotelFilePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const filePath = path.join(__dirname, "../../hoteis/", `checkins.json`);
+  const reservaFilePath = path.join(__dirname, "../../reservas/", `reservas.json`);
+  const hotelFilePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
 
   hotelParaCheckIn = buscarHotelPorId(idHotel);
   if (erroHotelNaoEncontrado(hotelParaCheckIn)) return hotelParaCheckIn;

@@ -9,8 +9,8 @@ function cancelarReserva(idHotel, nomeCliente) {
   let reserva = {};
   reserva.idHotel = idHotel;
   reserva.nomeCliente = nomeCliente.toLocaleLowerCase();
-  const reservaFilePath = path.join(__dirname, "../reservas/", `reservas.json`);
-  const hotelFilePath = path.join(__dirname, "../hoteis/", `hoteis.json`);
+  const reservaFilePath = path.join(__dirname, "../../reservas/", `reservas.json`);
+  const hotelFilePath = path.join(__dirname, "../../hoteis/", `hoteis.json`);
 
   try {
     const jsonData = fs.readFileSync(reservaFilePath);
